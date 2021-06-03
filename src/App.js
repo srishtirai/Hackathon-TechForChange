@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import DonutChart from './Charts/Donut';
+import ScatterPlot from './Charts/ScatterPlot';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <div className="InnerApp">
+       <p className="name">Hello David!</p>
+        <div className="Header">
+          <DonutChart />
+        </div>
+        <div className="Chart">
+          <ScatterPlot/>
+        </div>
+        <div className="section">
+
+        </div>
+      </div> 
     </div>
   );
 }

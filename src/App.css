@@ -1,38 +1,81 @@
 .App {
-  text-align: center;
+  position: relative;
+  top: -3px;
+  left: 2px;
+  width: 100%;
+  height: 2700px;
+  background: #C2E2E7 0% 0% no-repeat padding-box;
+  border: 1px solid #979797;
+  opacity: 1;
+}
+.InnerApp{
+  position: absolute;
+  border-radius: 25px;
+  top: 73px;
+  left: 7.833%;
+  width: 89.605%;
+  height: 2575px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #D8D8D8;
+  opacity: 1;
+}
+.Header{
+  position: absolute;
+  top: 99px;
+  left: 4.82%;
+  width: 90.36%;
+  height: 168px;
+  background: #D6E8EA 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  opacity: 1;
+}
+.name{
+  position: absolute;
+  font-size: 18px;
+  font-family: 'Lato-Bold';
+  font-weight: 10;
+  top: 49px;
+  left: 6.454%;
+  width: 104px;
+  height: 22px;
+  text-align: left;
+  letter-spacing: 0.51px;
+  color: #000000;
+  opacity: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Chart{
+  position: absolute;
+  top: 297px;
+  left: 4.82%;
+  width: 23.938%;
+  height: 297px;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.section{
+  position: absolute;
+  top: 717px;
+  left: 166px;
+  width: 538px;
+  height: 395px;
+  border: 1px;
+  border-radius: 3px;
+  opacity: 1;
+}
+
+#donut{
+  position: absolute;
+  top: 32px;
+  left: 16px;
+  width: 104px;
+  height: 104px;
+}
+
+/* @media only screen and (max-width: 620px) {
+  .menu, .main, .right {
+    width: 100%;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+} */
