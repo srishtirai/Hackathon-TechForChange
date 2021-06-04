@@ -1,0 +1,61 @@
+#graph_heading{
+    position: absolute;
+    top:10px;
+    left:19px;
+    width: 104px;
+    font-size: 18px;
+    font-family: 'Lato-Bold';
+    font-weight: 10;
+    color: #2C2D2D;
+}
+
+#stats{
+    position: relative;
+    left:5%;
+    font-size: 12px;
+    bottom:500px;
+    color:#006BD4;
+}
+
+#donut1{
+    position: relative;
+    top: 32px;
+    left: 16px;
+    width: 104px;
+    height: 104px;
+}
+
+#donut2{
+    position: relative;
+    top: 0px;
+    left: 80px;
+    width: 104px;
+    height: 104px;   
+}
+#donut3{
+    position: relative;
+    top: 0px;
+    left: 40px;
+    width: 104px;
+    height: 104px;   
+}
+#donut4{
+    position: relative;
+    top: 0px;
+    left: 40px;
+    width: 104px;
+    height: 104px;   
+}
+#donut2_legend{
+    position: relative;
+    top: 40px;
+    left: 2px;
+    width: 104px;
+    height: 30px;   
+}
+#divider{
+    position: relative;
+    bottom: 200px;
+    left:5%;
+    width: 90%;
+}

@@ -1,16 +1,14 @@
 import * as d3 from "d3";
 import {useEffect} from "react";
-import '../App.css';
+import './Donut.css';
 
-export default function DonutChart() {
+export default function DonutChart(props) {
   useEffect(() => {
-    var width = 104,height = 104;
+    var width = props.width,height = props.height;
 
-// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
 var radius = Math.min(width, height)/2
 
-// append the svg object to the div called 'my_dataviz'
-var svg = d3.select("#donut")
+var svg = d3.select("#"+props.id)
   .append("svg")
     .attr("width", width)
     .attr("height", height)
@@ -18,12 +16,12 @@ var svg = d3.select("#donut")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 // Create dummy data
-var data = {a: 5, b: 15}
+var data = props.data.data;
 
 // set the color scale
 var color = d3.scaleOrdinal()
   .domain(data)
-  .range(["#47987A", "#D2D7D8"])
+  .range(props.data.colors)
 
 // Compute the position of each group on the pie:
 var pie = d3.pie()
@@ -32,21 +30,52 @@ var pie = d3.pie()
 
 var data_ready = pie(d3.entries(data))
 
-// Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
 svg
   .selectAll('whatever')
   .data(data_ready)
   .enter()
   .append('path')
   .attr('d', d3.arc()
-    .innerRadius(45)         // This is the size of the donut hole
+    .innerRadius(45)         
     .outerRadius(radius)
   )
   .attr('fill', function(d){ return(color(d.data.key)) })
-  .style("opacity",1)
+  .style("opacity",1);
+
+  if(props.data.detail){
+  svg.append("text").attr("x", -15).attr("y", -10).text(props.data.detail.numerical).style("font-size", "23px").attr("alignment-baseline","middle")
+  svg.append("text").attr("x", -20).attr("y", 15).text(props.data.detail.desc).style("font-size", "15px").attr("alignment-baseline","middle")
+  }
+  if(props.legend){
+    var svgLegend = d3.select("#"+props.id+"_legend")
+    .append("svg")
+      .attr("width", width+165)
+      .attr("height", 70)
+    .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    let i=-30
+    props.data.colors.forEach(e => {
+      svgLegend.append("circle").attr("cx",i).attr("cy",-40).attr("r", 6).style("fill", e);
+      i+=90;
+    });
+    i=-20
+    props.data.legends.forEach(e => {
+      svgLegend.append("text").attr("x",i).attr("y", -40).text(e).style("font-size", "15px").attr("alignment-baseline","middle")
+      i+=90;
+    });
+
+  }
 }, []);
       return (
-          <div id="donut">
+        <div>
+          <p id="graph_heading">{props.data.title}</p>
+          <div id={props.id}>
           </div>
+          <div>
+          <div id={props.id+"_legend"}></div>
+          {props.data.stats?<hr id="divider"></hr>:''}
+          <p id="stats">{props.data.stats}</p>
+          </div>
+        </div>
       );
 }

@@ -1,0 +1,39 @@
+#scatter1{
+    position: relative;
+    top: 0px;
+    left: 30px;
+    width: 665px;
+    height: 200px;
+}
+#scatter2{
+    position: relative;
+    top: 0px;
+    left: 30px;
+    width: 665px;
+    height: 200px;
+}
+#graph_heading{
+    position: relative;
+    top:8px;
+    left:19px;
+    width: 300px;
+    font-size: 18px;
+    font-family: 'Lato-Bold';
+    font-weight: 10;
+    color: #2C2D2D;
+}
+
+#stats{
+    position: relative;
+    left:5%;
+    font-size: 12px;
+    top:3px;
+    color:#006BD4;
+}
+
+#divider{
+    position: relative;
+    top: 10px;
+    left:0%;
+    width: 90%;
+}

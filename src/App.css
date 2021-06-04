@@ -14,7 +14,7 @@
   top: 73px;
   left: 7.833%;
   width: 89.605%;
-  height: 2575px;
+  height: 95%;
   background: #FFFFFF 0% 0% no-repeat padding-box;
   border: 1px solid #D8D8D8;
   opacity: 1;
@@ -29,11 +29,13 @@
   border-radius: 3px;
   opacity: 1;
 }
+
 .name{
   position: absolute;
   font-size: 18px;
   font-family: 'Lato-Bold';
-  font-weight: 10;
+  font-weight: 20;
+  line-height: 22px;
   top: 49px;
   left: 6.454%;
   width: 104px;
@@ -45,27 +47,136 @@
 }
 
 .Chart{
-  position: absolute;
+  /* position: absolute;
   top: 297px;
-  left: 4.82%;
-  width: 23.938%;
-  height: 297px;
+  left: 4.82%; */
+  float: left;
+  margin: 0 20px 20px 0;
+  width: 293px;
+  height: 317px;
   border: 1px solid #979797;
   border-radius: 3px;
   opacity: 1;
 }
-
-.section{
-  position: absolute;
-  top: 717px;
-  left: 166px;
-  width: 538px;
-  height: 395px;
-  border: 1px;
+.Part1{
+  position: relative;
+  top: 297px;
+  left: 4.82%; 
+  width: 100%;
+}
+.Part2{
+  position: relative;
+  top: 297px;
+  left: 4.82%; 
+  width: 100%;
+}
+.Part3{
+  position: relative;
+  top: 297px;
+  left: 4.82%; 
+  width: 100%;
+}
+.Part4{
+  position: relative;
+  top: 297px;
+  left: 4.82%; 
+  width: 100%;
+}
+.Data_sec{
+  position: relative;
+  top: 297px;
+  left: 4.82%; 
+  width: 90.36%;
+  height: 168px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
   border-radius: 3px;
   opacity: 1;
 }
-
+#section{
+  /* position: absolute;
+  top: 297px;
+  left: 382px; */
+  float:left;
+  width: 63.971%;
+  height: 317px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
+.Bar_Pie1{
+  float:left;
+  width: 538px;
+  height: 395px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
+.Bar_Pie2{
+  float:left;
+  width: 538px;
+  height: 395px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
+.Group{
+  float:left;
+  width: 417px;
+  height: 395px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
+.Mixed{
+  float:left;
+  width: 659px;
+  height: 395px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
+.Pie_Scat1{
+  float:left;
+  width: 538px;
+  height: 317px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
+.Pie_Scat2{
+  float:left;
+  width: 538px;
+  height: 317px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
+.Pie_Scat3{
+  float:left;
+  width: 538px;
+  height: 317px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
+.Pie_Scat4{
+  float:left;
+  width: 538px;
+  height: 317px;
+  margin: 0 20px 40px 0;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  opacity: 1;
+}
 #donut{
   position: absolute;
   top: 32px;
@@ -74,8 +185,52 @@
   height: 104px;
 }
 
-/* @media only screen and (max-width: 620px) {
-  .menu, .main, .right {
+.pieData{
+  position: absolute;
+  top:34px;
+  left: 147px;
+  width:13.02%;
+  height: 79px;
+}
+
+.applications{
+  position: absolute;
+  left:39.331%;
+  top:34px;
+  width:219px;
+}
+
+.info{
+  position: absolute;
+  left:73.779%;
+  top:34px;
+  width:174px;
+}
+
+@media screen and (max-width: 998px) {
+  #section{
+    width: 90%;
+  }
+  .App{
+    height: 5000px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .App{
+    height: 5000px;
+  }
+  .InnerApp {
+    left:0%;
     width: 100%;
   }
-} */
+  .Chart{
+    margin: 0 20px 20px 20px;
+    margin: auto;
+  }
+  #section{
+    width: 90%;
+  }
+  .Bar_Pie1{
+    width: 70%;
+  }
+}
