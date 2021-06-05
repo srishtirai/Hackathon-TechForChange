@@ -9,14 +9,6 @@
     color: #2C2D2D;
 }
 
-#stats{
-    position: relative;
-    left:5%;
-    font-size: 12px;
-    bottom:500px;
-    color:#006BD4;
-}
-
 #donut1{
     position: relative;
     top: 32px;
@@ -30,32 +22,54 @@
     top: 0px;
     left: 80px;
     width: 104px;
-    height: 104px;   
+    height: 160px;   
 }
-#donut3{
+#donut3, #donut4{
     position: relative;
-    top: 0px;
-    left: 40px;
+    top: 30px;
+    left: 5px;
     width: 104px;
-    height: 104px;   
+    height: 200px;
+    padding-left:40px;
+    padding-right: 0;   
 }
-#donut4{
+#donut5, #donut6, #donut7, #donut8{
     position: relative;
-    top: 0px;
-    left: 40px;
+    top: 10px;
+    left: 5px;
     width: 104px;
-    height: 104px;   
+    height: 160px;  
+    padding-left: 60px; 
 }
+
 #donut2_legend{
     position: relative;
-    top: 40px;
+    top: 0px;
     left: 2px;
     width: 104px;
     height: 30px;   
 }
-#divider{
+#donut3_legend, #donut4_legend{
     position: relative;
-    bottom: 200px;
-    left:5%;
-    width: 90%;
+    top: 10px;
+    left: 2px;
+    width: 104px;
+    height: 70px;   
 }
+
+#donut5_legend,#donut6_legend,#donut7_legend,#donut8_legend{
+    position: relative;
+    top: 10px;
+    left: 2px;
+    width: 104px;
+    height: 30px;   
+}
+
+
+@media screen and (max-width: 700px) {
+    #donut3,#donut4,#donut5,#donut6,#donut7,#donut8{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+

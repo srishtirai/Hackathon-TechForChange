@@ -1,15 +1,49 @@
 #horizontalbarGraph{
-    position: absolute;
-    top: 50px;
-    left: 250px;
-    width: 300px;
-    height: 150px;
+    position: relative;
+    bottom: 260px;
+    left: 140px;
+    width: 100px;
+    padding-left: 70px;
+    height: 0;
 }
 
 #barGraph{
     position: relative;
     bottom: 270px;
-    left: 280px;
+    left: 180px;
     width: 300px;
-    height: 250px;
+    padding-left: 80px;
+    height: 0;
+}
+
+#groupHeading{
+    position: absolute;
+    top:10px;
+    left:19px;
+    width: 300px;
+    font-size: 18px;
+    font-family: 'Lato-Bold';
+    font-weight: 10;
+    color: #2C2D2D;
+}
+#legends{
+    position: relative;
+    top: -35px;
+    left: 0px;
+    width: 104px;
+    height: 30px;
+}
+#groupBar{
+    position: relative;
+    top: 60px;
+    left: 16px;
+    width: 104px;
+    height: 300px;
+}
+
+@media screen and (max-width: 700px) {
+    #horizontalbarGraph, #barGraph{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }

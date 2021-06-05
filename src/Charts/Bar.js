@@ -44,7 +44,7 @@ svg.selectAll("mybar")
     .attr("width", 5)
     .attr("height", function(d) { return height - y(d.y); })
     .attr("fill", props.data.color)
- }, []);
+ });
 
 return (
     <div id="barGraph">

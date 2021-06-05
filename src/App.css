@@ -12,7 +12,7 @@
   position: absolute;
   border-radius: 25px;
   top: 73px;
-  left: 7.833%;
+  left: 5%;
   width: 89.605%;
   height: 95%;
   background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -58,30 +58,13 @@
   border-radius: 3px;
   opacity: 1;
 }
-.Part1{
+.Part1, .Part2, .Part3,.Part4{
   position: relative;
   top: 297px;
   left: 4.82%; 
   width: 100%;
 }
-.Part2{
-  position: relative;
-  top: 297px;
-  left: 4.82%; 
-  width: 100%;
-}
-.Part3{
-  position: relative;
-  top: 297px;
-  left: 4.82%; 
-  width: 100%;
-}
-.Part4{
-  position: relative;
-  top: 297px;
-  left: 4.82%; 
-  width: 100%;
-}
+
 .Data_sec{
   position: relative;
   top: 297px;
@@ -105,16 +88,20 @@
   border-radius: 3px;
   opacity: 1;
 }
-.Bar_Pie1{
-  float:left;
-  width: 538px;
-  height: 395px;
-  margin: 0 20px 40px 0;
-  border: 1px solid #979797;
-  border-radius: 3px;
-  opacity: 1;
+#stats{
+  position: relative;
+  left:5%;
+  font-size: 12px;
+  top:3px;
+  color:#006BD4;
 }
-.Bar_Pie2{
+#divider{
+  position: relative;
+  top: 10px;
+  left:0%;
+  width: 90%;
+}
+.Bar_Pie1, .Bar_Pie2{
   float:left;
   width: 538px;
   height: 395px;
@@ -141,7 +128,7 @@
   border-radius: 3px;
   opacity: 1;
 }
-.Pie_Scat1{
+.Pie_Scat1,.Pie_Scat2,.Pie_Scat3,.Pie_Scat4{
   float:left;
   width: 538px;
   height: 317px;
@@ -150,33 +137,7 @@
   border-radius: 3px;
   opacity: 1;
 }
-.Pie_Scat2{
-  float:left;
-  width: 538px;
-  height: 317px;
-  margin: 0 20px 40px 0;
-  border: 1px solid #979797;
-  border-radius: 3px;
-  opacity: 1;
-}
-.Pie_Scat3{
-  float:left;
-  width: 538px;
-  height: 317px;
-  margin: 0 20px 40px 0;
-  border: 1px solid #979797;
-  border-radius: 3px;
-  opacity: 1;
-}
-.Pie_Scat4{
-  float:left;
-  width: 538px;
-  height: 317px;
-  margin: 0 20px 40px 0;
-  border: 1px solid #979797;
-  border-radius: 3px;
-  opacity: 1;
-}
+
 #donut{
   position: absolute;
   top: 32px;
@@ -208,20 +169,34 @@
 }
 
 @media screen and (max-width: 998px) {
-  #section{
+  /* #section{
     width: 90%;
-  }
+  } */
   .App{
     height: 5000px;
   }
 }
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 400px) {
   .App{
     height: 5000px;
+    width: 100%;
   }
   .InnerApp {
     left:0%;
     width: 100%;
+  }
+}*/
+@media screen and (max-width: 700px) {
+  .App{
+    height: 5000px;
+    width: 100%;
+  }
+  .InnerApp {
+    left:0%;
+    width: 100%;
+  }
+  .Header{
+    height: 180px;
   }
   .Chart{
     margin: 0 20px 20px 20px;
@@ -230,7 +205,7 @@
   #section{
     width: 90%;
   }
-  .Bar_Pie1{
-    width: 70%;
+  .Bar_Pie1, .Bar_Pie2, .Pie_Scat1,.Pie_Scat2,.Pie_Scat3,.Pie_Scat4{
+    width: 400px;
   }
-}
+} 

@@ -29,16 +29,13 @@ export default function HorizontalBar(props) {
       .range([ 0, width]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x).tickValues(props.data.xValues))
-      .selectAll("text")
-        .attr("transform", "translate(-10,0)rotate(-45)")
-        .style("text-anchor", "end");
+      .call(d3.axisBottom(x).tickValues(props.data.xValues));
 
    
     var y = d3.scaleBand()
       .range([ 0, height ])
       .domain(data.map(function(d) { return d.y; }))
-      .padding(.1);
+      .padding(.7);
     svg.append("g")
       .call(d3.axisLeft(y))
   
@@ -53,7 +50,7 @@ export default function HorizontalBar(props) {
       .attr("height", 10 )
       .attr("fill", function(d) { return d.color })
 
-  }, []);
+  });
 
   return (
       <div id="horizontalbarGraph">

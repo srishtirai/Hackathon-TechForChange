@@ -1,18 +1,31 @@
 import * as d3 from "d3";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import './ScatterPlot.css';
 
 export default function ScatterPlot(props) {
+  const [dimensions, setDimensions] = useState({ 
+    height: props.height,
+    width: props.width
+  })
     useEffect(() => {
-    const DATA = props.data.data;
-    DATA.forEach(element => {
-      element.x=d3.timeParse("%Y-%m-%d")(element.x)
-    });
-       
+      // function drawChart(){
+      //   console.log(window.innerWidth)
+      //   if(window.innerWidth<700){
+      //     setDimensions({
+      //       width:400
+      //     })
+      //   }
+     
     const margin = { top: 10, right: 40, bottom: 30, left: 30 },
-      width = props.width - margin.left - margin.right,
-      height = props.height - margin.top - margin.bottom;
+      width = dimensions.width - margin.left - margin.right,
+      height = dimensions.height - margin.top - margin.bottom;
 
+  // function handleResize(){
+  //   setDimensions({
+  //     width : parseInt(d3.select('#'+props.id).style('width'), 10) - margin.left - margin.right
+  //   });
+  //   console.log(width);
+  // }
     const svg = d3
       .select("#"+props.id)
       .append("svg")
@@ -21,16 +34,36 @@ export default function ScatterPlot(props) {
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+    const DATA = props.data.data;
+
+    if(!props.data.xValues){
+    DATA.forEach(element => {
+      element.x=d3.timeParse("%Y-%m-%d")(element.x)
+    });
+
       var x = d3.scaleTime().domain(d3.extent(DATA, function(d) { return d.x; }))
       .range([ 0, width ]);
       svg
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%b")));
+  }
+  else{
+    var x = d3.scaleBand()
+    .range([ 0, width ])
+     .domain(DATA.map(function(d) { return d.x; }))
+  .padding(0);
+svg.append("g")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x))
+  .selectAll("text")
+  }
 
-    const y = d3.scaleLinear().domain([0,175]).range([height, 0]);
+    const yVal=props.data.yValues;
 
-    svg.append("g").call(d3.axisLeft(y).tickValues([0, 25, 50, 75, 100, 125, 150, 175]));
+    const y = d3.scaleLinear().domain([0,yVal[yVal.length-1]]).range([height, 0]);
+
+    svg.append("g").call(d3.axisLeft(y).tickValues(yVal));
 
     if(props.data.data3){
       const data = props.data.data3;
@@ -91,17 +124,34 @@ svg.append('line')
   .attr('x2', x(DATA[6].x))
   .attr('y2', height)
   .attr('stroke', 'red')
-          }
-  
-  }, []);
+}
+if(props.data.legends){
+  var svgLegend = d3.select("#scatterLegends")
+    .append("svg")
+      .attr("width", width+165)
+      .attr("height", 70)
+    .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    let i=-30
+    props.data.colors.forEach(e => {
+      svgLegend.append("circle").attr("cx",i).attr("cy",-40).attr("r", 6).style("fill", e);
+      i+=90;
+    });
+    i=-20
+    props.data.legends.forEach(e => {
+      svgLegend.append("text").attr("x",i).attr("y", -40).text(e).style("font-size", "15px").attr("alignment-baseline","middle")
+      i+=90;
+    });
+  }
+
+  });
 
 return (
   <div>
     <p id="graph_heading">{props.data.title}</p>
     <div id={props.id}>
     </div>
-     <hr id="divider"></hr>
-    <p id="stats">{props.data.stats}</p>
+    {props.data.legends?<div id="scatterLegends"></div>:''}
   </div>
 );
 }

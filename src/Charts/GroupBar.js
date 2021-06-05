@@ -1,6 +1,6 @@
 import * as d3 from "d3";
-import {Suspense, useEffect} from "react";
-import '../App.css';
+import {useEffect} from "react";
+import './BarChart.css';
 
 export default function GroupBar(props) {
     useEffect(() => {
@@ -68,10 +68,30 @@ var svg = d3.select("#groupBar")
       .attr("height", function(d) { return height - y(d.value); })
       .attr("fill", function(d) { return color(d.key); });
 
-    }, []);
+      var svgLegend = d3.select("#legends")
+    .append("svg")
+      .attr("width", width+165)
+      .attr("height", 100)
+    .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    let i=-30
+    props.data.colors.forEach(e => {
+      svgLegend.append("circle").attr("cx",i).attr("cy",-40).attr("r", 6).style("fill", e);
+      i+=90;
+    });
+    i=-20
+    subgroups.forEach(e => {
+      svgLegend.append("text").attr("x",i).attr("y", -40).text(e).style("font-size", "15px").attr("alignment-baseline","middle")
+      i+=90;
+    });
+
+    });
 
     return (
+      <div><p id="groupHeading">{props.data.title}</p>
         <div id="groupBar">
+        </div>
+        <div id={"legends"}></div>
         </div>
     );
 }

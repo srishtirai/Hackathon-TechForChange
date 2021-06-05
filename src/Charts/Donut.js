@@ -15,15 +15,12 @@ var svg = d3.select("#"+props.id)
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-// Create dummy data
 var data = props.data.data;
 
-// set the color scale
 var color = d3.scaleOrdinal()
   .domain(data)
   .range(props.data.colors)
 
-// Compute the position of each group on the pie:
 var pie = d3.pie()
   .value(function(d) {return d.value; })
 .sort(null);
@@ -36,7 +33,7 @@ svg
   .enter()
   .append('path')
   .attr('d', d3.arc()
-    .innerRadius(45)         
+    .innerRadius(radius*0.85)         
     .outerRadius(radius)
   )
   .attr('fill', function(d){ return(color(d.data.key)) })
@@ -65,17 +62,13 @@ svg
     });
 
   }
-}, []);
+});
       return (
         <div>
           <p id="graph_heading">{props.data.title}</p>
           <div id={props.id}>
           </div>
-          <div>
           <div id={props.id+"_legend"}></div>
-          {props.data.stats?<hr id="divider"></hr>:''}
-          <p id="stats">{props.data.stats}</p>
-          </div>
         </div>
       );
 }

@@ -25,6 +25,34 @@ export const donutChartData = {
         "colors":['#90D4DD','#00A9E0','#005B9F'],
         "legends":['App','Database','Web'],
         "stats":"Number of database services that are down have decreased by 5%"
+    },
+    "donut5":{
+        "title":"Network Vulnerability ( This week )",
+        "data":{a: 10, b: 2, c:8},
+        "colors":['#FF4128','#FFBD35','#6490DE'],
+        "legends":['Critical','High','Medium'],
+        "stats":"The infrastructure that was down has increased by 10% since yesterday."
+    },
+    "donut6":{
+        "title":"Code Vulnerability ( This week )",
+        "data":{a: 10, b: 2, c:8},
+        "colors":['#FF4128','#FFBD35','#6490DE'],
+        "legends":['Critical','High','Medium'],
+        "stats":"The infrastructure that was down has increased by 10% since yesterday."
+    },
+    "donut7":{
+        "title":"Web App Vulnerability ( This week )",
+        "data":{a: 10, b: 2, c:8},
+        "colors":['#FF4128','#FFBD35','#6490DE'],
+        "legends":['Critical','High','Medium'],
+        "stats":"The infrastructure that was down has increased by 10% since yesterday."
+    },
+    "donut8":{
+        "title":"OSS Vulnerability ( This week )",
+        "data":{a: 10, b: 2, c:8},
+        "colors":['#FF4128','#FFBD35','#6490DE'],
+        "legends":['Critical','High','Medium'],
+        "stats":"The infrastructure that was down has increased by 10% since yesterday."
     }
 }
 
@@ -54,6 +82,7 @@ export const scatterPlotData={
             {'x':'2018-11-1', 'y':80},
             {'x':'2018-12-1','y':100}
         ],
+        "yValues":[0, 25, 50, 75, 100, 125, 150, 175],
         'stats':"69% Increase in Critical Issues in the last month"
     },
     'ScatterPlot2':{
@@ -83,9 +112,36 @@ export const scatterPlotData={
             {x:'2018-12-1', y:150},
             {x:'2018-12-1',y:50}
         ],
+        "yValues":[0, 25, 50, 75, 100, 125, 150, 175],
         'colors':['#0059A1','#796FD0','#8ED4DE'],
         'legends':['Budget','Spends','Forecast'],
         'stats':"Current spending is higher than budgeted"
+    },
+    "ScatterPlot3":{
+        "yValues":[0, 5, 10, 15, 20, 25, 30, 35],
+        "xValues":['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+        'data':[
+            {x:'Sun', y:5},
+            {x:'Mon', y:13},
+            {x:'Tue',y:9},
+            {x:'Wed', y:20},
+            {x:'Thu', y:13},
+            {x:'Fri',y:9},
+            {x:'Sat',y:10}
+        ]
+    },
+    "ScatterPlot4":{
+        "yValues":[0, 5, 10, 15, 20, 25, 30, 35],
+        "xValues":['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+        'data':[
+            {x:'Sun', y:5},
+            {x:'Mon', y:10},
+            {x:'Tue',y:20},
+            {x:'Wed', y:15},
+            {x:'Thu', y:9},
+            {x:'Fri',y:15},
+            {x:'Sat',y:10}
+        ]
     }
 }
 
@@ -117,7 +173,8 @@ export const barGraphData = {
             {'group': "AZURE", 'Budget': "20", 'Spent': "20"},
             {'group': "ORACLE", 'Budget': "30", 'Spent': "40"}
         ],
-        'colors':['#66C0F5','#6490DE']
+        'colors':['#66C0F5','#6490DE'],
+        'stats':'Based on previous expenses, suggest a 10% increase'
     }
 
 }

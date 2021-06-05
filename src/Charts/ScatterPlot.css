@@ -2,16 +2,25 @@
     position: relative;
     top: 0px;
     left: 30px;
-    width: 665px;
-    height: 200px;
+    width: 100%;
+    height: 190px;
 }
 #scatter2{
     position: relative;
-    top: 0px;
+    top: 10px;
     left: 30px;
     width: 665px;
     height: 200px;
 }
+#scatter3, #scatter4,#scatter5, #scatter6{
+    position: relative;
+    bottom: 220px;
+    left: 170px;
+    width: 250px;
+    height: 0px;
+    padding-left: 80px;
+}
+
 #graph_heading{
     position: relative;
     top:8px;
@@ -23,17 +32,19 @@
     color: #2C2D2D;
 }
 
-#stats{
-    position: relative;
-    left:5%;
-    font-size: 12px;
-    top:3px;
-    color:#006BD4;
-}
-
-#divider{
+#scatterLegends{
     position: relative;
     top: 10px;
-    left:0%;
-    width: 90%;
+    left: -40px;
+    width: 104px;
+    height: 75px;   
+}
+
+@media screen and (max-width: 700px) {
+    #scatter1{
+        width: 100%;
+    }
+    #scatter3, #scatter4,#scatter5, #scatter6{
+        padding-left: 0;
+    }
 }
