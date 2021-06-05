@@ -82,6 +82,8 @@ export const scatterPlotData={
             {'x':'2018-11-1', 'y':80},
             {'x':'2018-12-1','y':100}
         ],
+        'dotColor':'#92D4DC',
+        'lineColor':'#646464',
         "yValues":[0, 25, 50, 75, 100, 125, 150, 175],
         'stats':"69% Increase in Critical Issues in the last month"
     },
@@ -113,6 +115,10 @@ export const scatterPlotData={
             {x:'2018-12-1',y:50}
         ],
         "yValues":[0, 25, 50, 75, 100, 125, 150, 175],
+        'dotColor':'#7972CD',
+        'areaColor':'#8ED4DE',
+        'curveColor':'#005B9F',
+        'lineColor':'#5C5C5C',
         'colors':['#0059A1','#796FD0','#8ED4DE'],
         'legends':['Budget','Spends','Forecast'],
         'stats':"Current spending is higher than budgeted"
@@ -128,7 +134,9 @@ export const scatterPlotData={
             {x:'Thu', y:13},
             {x:'Fri',y:9},
             {x:'Sat',y:10}
-        ]
+        ],
+        lineColor:'#979797',
+        dotColor:'#608CE4'
     },
     "ScatterPlot4":{
         "yValues":[0, 5, 10, 15, 20, 25, 30, 35],
@@ -141,7 +149,9 @@ export const scatterPlotData={
             {x:'Thu', y:9},
             {x:'Fri',y:15},
             {x:'Sat',y:10}
-        ]
+        ],
+        lineColor:'#979797',
+        dotColor:'#608CE4'
     }
 }
 
@@ -176,5 +186,18 @@ export const barGraphData = {
         'colors':['#66C0F5','#6490DE'],
         'stats':'Based on previous expenses, suggest a 10% increase'
     }
+}
 
+export const otherInfo={
+    'info1':{
+        'Incidents':'15',
+        'Network':'4',
+        'Code':'4',
+        'Oss':'3',
+    },
+    'info2':{
+        'MTTD':'2m 5s',
+        'MTTR':'3d4h5m',
+        'Patch Implant':'5h 30m'
+    }
 }

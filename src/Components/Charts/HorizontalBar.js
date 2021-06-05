@@ -3,28 +3,25 @@ import {useEffect} from "react";
 import './BarChart.css';
 
 export default function HorizontalBar(props) {
-    useEffect(() => {
-
+  useEffect(() => {
     const data=props.data.data;
-    var i=0;
+    let i=0;
     props.data.colors.forEach(e => {
         data[i].color=e;i++;
     });
-      var margin = {top: 20, right: 30, bottom: 40, left: 90},
-    width = props.width - margin.left - margin.right,
-    height = props.height;
-  
-  // append the svg object to the body of the page
-  var svg = d3.select("#horizontalbarGraph")
-    .append("svg")
+
+    let margin = {top: 20, right: 30, bottom: 40, left: 90},
+        width = props.width - margin.left - margin.right,
+        height = props.height;
+
+    let svg = d3.select("#horizontalbarGraph")
+      .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   
-  // Parse the Data
-    var x = d3.scaleLinear()
+    const x = d3.scaleLinear()
       .domain([0, 50])
       .range([ 0, width]);
     svg.append("g")
@@ -32,14 +29,13 @@ export default function HorizontalBar(props) {
       .call(d3.axisBottom(x).tickValues(props.data.xValues));
 
    
-    var y = d3.scaleBand()
+    const y = d3.scaleBand()
       .range([ 0, height ])
       .domain(data.map(function(d) { return d.y; }))
       .padding(.7);
     svg.append("g")
       .call(d3.axisLeft(y))
   
-    //Bars
     svg.selectAll("myRect")
       .data(data)
       .enter()
@@ -49,11 +45,9 @@ export default function HorizontalBar(props) {
       .attr("width", function(d) { return x(d.x-3); })
       .attr("height", 10 )
       .attr("fill", function(d) { return d.color })
-
   });
 
   return (
-      <div id="horizontalbarGraph">
-      </div>
+    <div id="horizontalbarGraph"></div>
   );
-  }
+}

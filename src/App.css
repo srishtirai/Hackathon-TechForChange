@@ -1,4 +1,4 @@
-.App {
+.app {
   position: relative;
   top: -3px;
   left: 2px;
@@ -8,7 +8,7 @@
   border: 1px solid #979797;
   opacity: 1;
 }
-.InnerApp{
+.innerApp{
   position: absolute;
   border-radius: 25px;
   top: 73px;
@@ -19,7 +19,7 @@
   border: 1px solid #D8D8D8;
   opacity: 1;
 }
-.Header{
+.header{
   position: absolute;
   top: 99px;
   left: 4.82%;
@@ -46,7 +46,7 @@
   opacity: 1;
 }
 
-.Chart{
+.chart{
   /* position: absolute;
   top: 297px;
   left: 4.82%; */
@@ -58,14 +58,14 @@
   border-radius: 3px;
   opacity: 1;
 }
-.Part1, .Part2, .Part3,.Part4{
+.part1, .part2, .part3,.part4{
   position: relative;
   top: 297px;
   left: 4.82%; 
   width: 100%;
 }
 
-.Data_sec{
+.dataSec{
   position: relative;
   top: 297px;
   left: 4.82%; 
@@ -77,9 +77,6 @@
   opacity: 1;
 }
 #section{
-  /* position: absolute;
-  top: 297px;
-  left: 382px; */
   float:left;
   width: 63.971%;
   height: 317px;
@@ -93,7 +90,11 @@
   left:5%;
   font-size: 12px;
   top:3px;
-  color:#006BD4;
+  text-align: left;
+  font-family: 'Lato-Bold';
+  letter-spacing: 0px;
+  color: #006BD4;
+  opacity: 1;
 }
 #divider{
   position: relative;
@@ -101,7 +102,7 @@
   left:0%;
   width: 90%;
 }
-.Bar_Pie1, .Bar_Pie2{
+.barPie1, .barPie2{
   float:left;
   width: 538px;
   height: 395px;
@@ -110,7 +111,7 @@
   border-radius: 3px;
   opacity: 1;
 }
-.Group{
+.group{
   float:left;
   width: 417px;
   height: 395px;
@@ -119,7 +120,7 @@
   border-radius: 3px;
   opacity: 1;
 }
-.Mixed{
+.mixed{
   float:left;
   width: 659px;
   height: 395px;
@@ -128,7 +129,7 @@
   border-radius: 3px;
   opacity: 1;
 }
-.Pie_Scat1,.Pie_Scat2,.Pie_Scat3,.Pie_Scat4{
+.pieScat1,.pieScat2,.pieScat3,.pieScat4{
   float:left;
   width: 538px;
   height: 317px;
@@ -148,7 +149,7 @@
 
 .pieData{
   position: absolute;
-  top:34px;
+  top:25px;
   left: 147px;
   width:13.02%;
   height: 79px;
@@ -157,14 +158,14 @@
 .applications{
   position: absolute;
   left:39.331%;
-  top:34px;
+  top:25px;
   width:219px;
 }
 
 .info{
   position: absolute;
   left:73.779%;
-  top:34px;
+  top:25px;
   width:174px;
 }
 
@@ -172,12 +173,12 @@
   /* #section{
     width: 90%;
   } */
-  .App{
+  .app{
     height: 5000px;
   }
 }
 /* @media screen and (max-width: 400px) {
-  .App{
+  .app{
     height: 5000px;
     width: 100%;
   }
@@ -187,25 +188,26 @@
   }
 }*/
 @media screen and (max-width: 700px) {
-  .App{
+  .app{
     height: 5000px;
     width: 100%;
   }
-  .InnerApp {
+  .innerApp {
     left:0%;
     width: 100%;
   }
-  .Header{
-    height: 180px;
+  .header{
+   font-size: 14px;
+    padding-bottom: 50px;
   }
-  .Chart{
+  .chart{
     margin: 0 20px 20px 20px;
     margin: auto;
   }
   #section{
     width: 90%;
   }
-  .Bar_Pie1, .Bar_Pie2, .Pie_Scat1,.Pie_Scat2,.Pie_Scat3,.Pie_Scat4{
+  .barPie1, .barPie2, .pieScat1,.pieScat2,.pieScat3,.pieScat4{
     width: 400px;
   }
 } 
