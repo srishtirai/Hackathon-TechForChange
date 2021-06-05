@@ -24,8 +24,8 @@ export default function Bar(props) {
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x))
-      .selectAll("text")
-    
+      .selectAll("text");
+     
     const y = d3.scaleLinear()
       .domain([0, 32])
       .range([ height, 0]);
@@ -41,9 +41,12 @@ export default function Bar(props) {
         .attr("y", function(d) { return y(d.y); })
         .attr("width", 5)
         .attr("height", function(d) { return height - y(d.y); })
-        .attr("fill", props.data.color)
-      }
-    );
+        .attr("fill", props.data.color);
+
+    svg.selectAll("text")
+      .style("stroke", "#979797")
+      .attr("class","text");
+  });
 
   return (
     <div id="barGraph"></div>

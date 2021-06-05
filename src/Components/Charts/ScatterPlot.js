@@ -13,17 +13,16 @@ export default function ScatterPlot(props) {
       width = dimensions.width - margin.left - margin.right,
       height = dimensions.height - margin.top - margin.bottom;
 
-    const svg = d3
-      .select("#"+props.id)
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
     const DATA = props.data.data;
+    let svg;
 
     if(!props.data.xValues){
+       svg= d3
+      .select("#"+props.id)
+      .append("svg")
+      .attr('viewBox', '0 0 ' + width + ' ' + height+100)
+      .append("g")
+      .attr("transform", `translate(${margin.left}, ${margin.top})`);
       DATA.forEach(element => {
         element.x=d3.timeParse("%Y-%m-%d")(element.x)
       });
@@ -36,6 +35,14 @@ export default function ScatterPlot(props) {
       .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%b")));
     }
     else{
+      svg = d3
+      .select("#"+props.id)
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
       var x = d3.scaleBand()
         .range([ 0, width ])
         .domain(DATA.map(function(d) { return d.x; }))
@@ -127,12 +134,18 @@ export default function ScatterPlot(props) {
         svgLegend.append("text").attr("x",i).attr("y", -40).text(e).style("font-size", "15px").attr("alignment-baseline","middle")
         i+=90;
       });
+      svgLegend.selectAll("text")
+      .style("stroke", "#474747")
     }
+    svg.selectAll("text")
+      .style("stroke", "#474747")
+      .attr("class","text");
+
   });
 
   return (
     <div>
-      <p id="graph_heading">{props.data.title}</p>
+      <p id="graph_heading"><strong>{props.data.title}</strong></p>
       <div id={props.id}></div>
       {props.data.legends?<div id="scatterLegends"></div>:''}
     </div>

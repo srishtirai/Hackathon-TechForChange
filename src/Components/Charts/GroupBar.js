@@ -80,11 +80,18 @@ export default function GroupBar(props) {
     subgroups.forEach(e => {
       svgLegend.append("text").attr("x",i).attr("y", -40).text(e).style("font-size", "15px").attr("alignment-baseline","middle")
       i+=90;
+      svgLegend.selectAll("text")
+      .style("stroke", "#474747")
+      .attr("class","text");
     });
+    svg.selectAll("text")
+      .style("stroke", "#979797")
+      .attr("class","text");
   });
 
   return (
-    <div><p id="groupHeading">{props.data.title}</p>
+    <div>
+      <p id="groupHeading"><strong>{props.data.title}</strong></p>
       <div id="groupBar"></div>
       <div id={"legends"}></div>
     </div>

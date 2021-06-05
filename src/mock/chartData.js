@@ -58,8 +58,8 @@ export const donutChartData = {
 
 export const headerInfo = {
     'stats':{
-        'applications': 407,
-        'critical (14% of total)': 57,
+        'Applications': 407,
+        'Critical (14% of total)': 57,
         'Warning (6% of total)':20
     },
     'timeInfo':['MTTD - 25s','MTTA - 2m 3s','MTTR - 4h 36m 6s']
@@ -189,13 +189,12 @@ export const barGraphData = {
 }
 
 export const otherInfo={
+    'title':'Overall Security',
     'info1':{
         'Incidents':'15',
         'Network':'4',
         'Code':'4',
         'Oss':'3',
-    },
-    'info2':{
         'MTTD':'2m 5s',
         'MTTR':'3d4h5m',
         'Patch Implant':'5h 30m'

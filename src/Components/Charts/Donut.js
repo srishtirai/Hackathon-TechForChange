@@ -21,6 +21,8 @@ export default function DonutChart(props) {
       .range(props.data.colors)
 
     let pie = d3.pie()
+      .startAngle(Math.PI / 4)
+      .endAngle(Math.PI * 2 + Math.PI / 4) 
       .value(function(d) {return d.value; })
       .sort(null);
 
@@ -59,12 +61,19 @@ export default function DonutChart(props) {
         svgLegend.append("text").attr("x",i).attr("y", -40).text(e).style("font-size", "15px").attr("alignment-baseline","middle")
         i+=90;
       })
+      svgLegend.selectAll("text")
+      .style("stroke", "#474747")
+      .attr("class","text");
     }
+
+    svg.selectAll("text")
+      .style("stroke", "#979797")
+
   });
   
   return (
     <div>
-      <p id="graph_heading">{props.data.title}</p>
+      <p id="graph_heading"><strong>{props.data.title}</strong></p>
       <div id={props.id}></div>
       <div id={props.id+"_legend"}></div>
     </div>

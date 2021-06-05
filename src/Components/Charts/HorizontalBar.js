@@ -45,6 +45,10 @@ export default function HorizontalBar(props) {
       .attr("width", function(d) { return x(d.x-3); })
       .attr("height", 10 )
       .attr("fill", function(d) { return d.color })
+
+    svg.selectAll("text")
+      .style("stroke", "#979797")
+      .attr("class","text");
   });
 
   return (

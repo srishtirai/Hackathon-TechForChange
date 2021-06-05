@@ -5,7 +5,7 @@ import ScatterPlot from './Components/Charts/ScatterPlot';
 import Bar from './Components/Charts/Bar';
 import HorizontalBar from './Components/Charts/HorizontalBar';
 import GroupBar from './Components/Charts/GroupBar';
-import {donutChartData, scatterPlotData, barGraphData} from './mock/chartData';
+import {donutChartData, scatterPlotData, barGraphData, otherInfo} from './mock/chartData';
 import Heading from './Components/Heading';
 
 export default function App(){
@@ -20,8 +20,8 @@ export default function App(){
             <hr id="divider"></hr>
             <p id="stats">{donutChartData.donut2.stats}</p>
           </div>
-          <div id="section" style={{"overflow":"auto"}}>
-            <ScatterPlot id="scatter1" width={700} height={200} data={scatterPlotData.ScatterPlot1}/>
+          <div id="section">
+            <ScatterPlot id="scatter1" width={700} height={170} data={scatterPlotData.ScatterPlot1}/>
             <hr id="divider"></hr>
             <p id="stats">{scatterPlotData.ScatterPlot1.stats}</p>
           </div>
@@ -40,20 +40,31 @@ export default function App(){
               <p id="stats">{donutChartData.donut4.stats}</p>
             </div>
           </div>
-        <div className="part3" style={{"overflow":"auto"}}>
+        <div className="part3">
             <div className="group">
               <GroupBar data={barGraphData.bar3}/>
               <hr id="divider"></hr>
               <p id="stats">{barGraphData.bar3.stats}</p>
             </div>
             <div className="mixed">
-                <ScatterPlot id="scatter2" width={600} height={220} data={scatterPlotData.ScatterPlot2}/>
+                <ScatterPlot id="scatter2" width={600} height={170} data={scatterPlotData.ScatterPlot2}/>
                 <hr id="divider"></hr>
                 <p id="stats">{scatterPlotData.ScatterPlot2.stats}</p>
             </div>
           </div>
         <div className="dataSec">
-          
+          <div className="dataTab">
+          <p id="dataHeading"><strong>{otherInfo.title}</strong></p>
+          <div className="vertical-line3"></div>
+          <div className="vertical-line4"></div>
+          {Object.keys(otherInfo.info1).map(key => (
+	            <p id="dataItems">
+            		<strong style={{"color":"#000000"}}>{otherInfo.info1[key]}</strong>
+                <br></br>
+              	{key}
+            	</p>
+            ))}
+          </div>
         </div>
         <div className="part4" >
             <div className="pieScat1">
