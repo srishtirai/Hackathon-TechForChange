@@ -26,7 +26,7 @@ export default function DonutChart(props) {
       .value(function(d) {return d.value; })
       .sort(null);
 
-    var data_ready = pie(d3.entries(data))
+    var data_ready = pie(Object.entries(data))
 
     svg
     .selectAll('whatever')
