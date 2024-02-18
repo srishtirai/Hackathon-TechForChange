@@ -4,6 +4,7 @@ import { EventBookingDialog } from "../Components/EventBookingDialog"; // New di
 import "./Events.css";
 import {toast} from 'react-toastify';
 import { getEvents, getTags, updateEventStatus } from "../api";
+import { Icon } from 'semantic-ui-react';
 import { formatDate } from "../constants";
 
 
@@ -98,8 +99,8 @@ export const Events = () => {
             <div className="event-info">
               <div className="event-header">{event.name}</div>
               <div className="event-date">{formatDate(event.created_at)}</div>
-              <div className="event-location">{event.description}</div>
-              <button className="book-button" onClick={() => openDialog(event)}>View</button>
+              <div className="event-location">Boston, MA</div>
+              <button className="book-button" onClick={() => openDialog(event)}> <Icon name="eye" /></button>
             </div>
           </div>
         ))}
