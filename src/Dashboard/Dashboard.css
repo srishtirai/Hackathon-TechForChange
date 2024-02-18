@@ -41,8 +41,8 @@
   }
   
   .dashboard .DALLE {
-    height: 130px;
-    width: 130px;
+    height: 200px;
+    width: 200px;
     object-fit: contain;
     border-radius: 50%;
   }
@@ -156,25 +156,21 @@
     font-weight: 600;
     letter-spacing: 0;
     text-align: center;
-    width: 122px;
   }
   
   .dashboard .line {
     height: 1px;
-    left: 60px;
-    object-fit: cover;
-    position: absolute;
-    top: 441px;
-    width: 1311px;
+    width: 120%;
+    margin: 10px 0px;
   }
   
   .dashboard .rectangle-4 {
     background-color: #8b451338;
     height: 500px;
-    left: 50px;
-    position: absolute;
-    top: 462px;
     width: 90%;
+    width: 90%;
+    margin-top: 20px;
+    padding: 20px;
   }
   
   .dashboard .header-instance {
@@ -187,25 +183,222 @@
   .dashboard .design-component-instance-node {
     width: 100% !important;
   }
-  
 
-  .progress {
-    width: 30%;
-    margin: 10px auto;
+  .dashboard .option-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .progress .progress-display {
-    display: flex;
+    justify-content: space-around; /* Adjust as needed */
     width: 100%;
-    justify-content: center;
+    margin-top: 40px;
+    margin-left: 80px;
+    justify-content: flex-start;
+  }
+  
+  .dashboard .text-wrapper {
+    color: #8b4513;
+    font-family: "Inter", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    margin: 0px 30px;
   }
 
-  .progress .progress-display span {
-    margin-right: 10px;
-    font-weight: bold;
+  .dashboard .text-wrapper {
+    color: #8b4513;
+    font-family: "Inter", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  .dashboard .text-wrapper.active {
+    color: #ffffff; /* Change the color for active tab */
+    background-color: #8b4513; /* Change the background color for active tab */
+    border-radius: 5px; /* Optional: Add rounded corners for active tab */
+    padding: 5px 10px; /* Optional: Add padding for active tab */
+  }
+  
+  .achievements-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-around;
+    justify-content: flex-start;
+  }
+  
+  .achievement-topic-container {
+    margin: 8px 10px;
     
   }
+  
+  .achievement-topic-bubble {
+    background: #8b4513; /* Your gradient start */
+    background: linear-gradient(90deg, rgba(139,69,19,1) 0%, rgba(205,133,63,1) 100%); /* Gradient effect */
+    border-radius: 20px; /* Rounded edges for the pill shape */
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    color: white; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+    cursor: pointer; /* Changes the cursor on hover */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .achievement-topic-bubble:hover {
+    transform: translateY(-2px); /* Slight raise effect on hover */
+  }
+  
+  .achievement-topic {
+    font-weight: bold;
+  }
+  
+  .achievement-score {
+    margin-left: 10px; /* Adds spacing between the topic and the score */
+    font-size: 0.9em; /* Slightly smaller font size for the score */
+  }
+
+  .topic-wise-scores {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8b4513; /* Match the color to your design */
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.levels-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.level-image {
+  width: 50px; /* Adjust image width as needed */
+  height: 50px; /* Adjust image height as needed */
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.level-name {
+  font-size: 14px; /* Adjust font size as needed */
+  /* Add additional styles for the level name */
+  color: #8b4513;
+}
+
+.locked {
+  opacity: 0.5; /* Adjust opacity for locked levels */
+  /* Add additional styles for locked levels */
+}
+.leaderboard-section {
+  padding-bottom: 20px;
+}
+.rank {
+  color: #8b4513;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.events-container-dash {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.event-card-dash {
+  background-color: #fffded;
+  border: 1px solid #8b4513;
+  box-shadow: 0px 4px 4px #00000040;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  height: 150px;
+  font-size: 14px;
+  margin: 0px 20px 20px 0px;
+  
+}
+.event-card-dash .event-header {
+  font-size: 16px;
+}
+.event-card-dash .event-date, .event-card-dash .event-location {
+  font-size: 14px;
+}
+
+.attendance-status {
+  font-size: 14px;
+  color: #8b4513;
+}
+
+.upcoming-events, .past-events {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rewards-container {
+  margin-top: 20px;
+}
+
+.rewards-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  
+}
+
+.reward-item {
+  background-color: #fffded;
+  border: 1px solid #8b4513;
+  box-shadow: 0px 4px 4px #00000040;
+  border-radius: 10px;
+  width: 200px;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.reward-item.disabled {
+  opacity: 0.5;
+}
+
+.business-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.offer-validity {
+  margin-top: 5px;
+}
+
+.product-type {
+  margin-top: 5px;
+}
+
+.coupon-code {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.disabled-text {
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.rewards-list {
+  display: flex;
+  gap: 30px;
+}

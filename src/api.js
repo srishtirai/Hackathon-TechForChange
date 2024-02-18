@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'http://10.192.4.244:5000';
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*"
 axios.defaults.headers.common['Content-Type'] = "application/json"
 axios.defaults.withCredentials = true

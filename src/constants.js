@@ -1,21 +1,24 @@
-import moment from 'moment';
-const level1 = [0, 1000]
-const level2 = [1000, 1500]
-const level3 = [1500, 2000]
-export const XP_LIMITS = {
-  [level1]: "1",
-  [level2]: "2",
-  [level3]: "3",
-}
+const level1 = [0, 1000];
+const level2 = [1000, 2000];
+const level3 = [2000, 3000];
 
-export const getXPLevel= (currentPoints) => {
-  for(let limits in XP_LIMITS) {
-    console.log(XP_LIMITS);
-    if (currentPoints >= limits[0] && currentPoints < limits[1]) {
+export const XP_LIMITS = {
+  [level1]: "Green Initiate",
+  [level2]: "Eco Warrior",
+  [level3]: "Sustainability Champion",
+};
+
+export const getXPLevel = (currentPoints) => {
+  for (let limits of Object.keys(XP_LIMITS)) {
+    const range = limits.split(",");
+    const lowerLimit = parseInt(range[0]);
+    const upperLimit = parseInt(range[1]);
+
+    if (currentPoints >= lowerLimit && currentPoints < upperLimit) {
       return {
-        "levelName": currentPoints[limits],
-        "remaining": limits[1] - currentPoints,
-      }
+        levelName: XP_LIMITS[limits],
+        remaining: upperLimit - currentPoints,
+      };
     }
   }
   return {};
