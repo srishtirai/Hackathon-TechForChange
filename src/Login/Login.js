@@ -17,7 +17,7 @@ const LoginSignupScreen = () => {
     e.preventDefault();
     if (isLogin) {
       loginUser({email, password}).then(({data}) => {
-        navigate('/home');
+        navigate('/dashboard');
       }).catch(error => {
         console.log(error.message);
         toast("Could not login !")
