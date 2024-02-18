@@ -10,7 +10,7 @@ export const Petition = () => {
   const [tags, setTags] = useState([]);
   const [petitions, setPetitions] = useState([]);
   const [visible, setVisible] = useState(true);
-  const [selectedTopic, setSelectedTopic] = useState((tags.length && tags[0]) || {});
+  const [selectedTopic, setSelectedTopic] = useState({});
   const fetchPetitions = (tag_id) => {
     getPetitions(tag_id).then(response => {
       setPetitions(response.data);
@@ -84,7 +84,7 @@ export const Petition = () => {
   ];*/
 
   const selectTopic = (topic) => {
-    setSelectedTopic(topic.id)
+    setSelectedTopic(topic)
     fetchPetitions(topic.id);
   }
 
