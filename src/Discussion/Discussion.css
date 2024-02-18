@@ -1,0 +1,129 @@
+.petition-page {
+    background-color: #fffded;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    color: #8b4513;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 200px; /* Width of the sidebar */
+    position: fixed; /* Fixed position to stay in place during scrolling */
+    background-color: #fffded; /* Background color of the sidebar */
+    padding: 20px; /* Padding inside the sidebar */
+    overflow-y: auto; /* Scrollable if content is longer than the screen */
+    z-index: 2; /* Ensure it's above the petition cards */
+    left: 0;
+    top: 40px;
+    height: 100%;
+  }
+  
+  .sidebar-topic {
+    display: block; /* Make each topic take the full width of the sidebar */
+    background-color: #d1b598; /* Background color of topic buttons */
+    color: #8b4513; /* Text color for topic buttons */
+    padding: 10px; /* Padding inside the buttons */
+    margin-bottom: 10px; /* Space between buttons */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Ensure it uses full available width */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .sidebar-topic.selected {
+    background-color: #b89c82; /* Background color for the selected topic */
+    font-weight: bold; /* Make text bold for the selected topic */
+  }
+  
+  /* Petition cards container styling */
+  .petition-container {
+    margin-left: 220px; /* Space for the sidebar plus a little extra */
+    width: calc(100% - 220px); /* Full width minus sidebar width */
+    background-color: #fffded;
+    position: relative;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    gap: 20px;
+    padding: 25px;
+  }
+  
+  /* Individual petition card styling */
+  .petition-card {
+    background-color: #e5d5bd;
+    border: 1px solid #8b4513;
+    box-shadow: 0px 4px 4px #00000040;
+    border-radius: 10px;
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 20px; /* Space between cards */
+    padding: 20px; /* Padding inside cards */
+    width: calc(100% - 140px); 
+  }
+  
+  /* Header of the petition card */
+  .petition-header {
+    font-size: 20px; /* Size of the header text */
+    color: #8b4513; /* Color of the header text */
+  }
+  
+  /* Status indicator styling */
+  .petition-status {
+    /* Common styling for all statuses */
+    display: inline-block; /* Allows for padding and margin */
+    padding: 5px 10px; /* Padding inside status indicator */
+    border-radius: 15px; /* Rounded corners for status indicator */
+    color: white; /* Text color inside status indicator */
+    margin-right: 10px; /* Space after the status indicator */
+    text-transform: capitalize; /* Capitalize the status text */
+  }
+  
+  .petition-status.active {
+    background-color: #76c043; /* Green for active status */
+  }
+  
+  .petition-status.resolved {
+    background-color: #4caf50; /* Different green for resolved status */
+  }
+  
+  .petition-status.rejected {
+    background-color: #e53935; /* Red for rejected status */
+  }
+  
+  /* Petition topic styling */
+  .petition-topic {
+    font-style: italic; /* Italicize the topic text */
+    color: #8b4513; /* Color of the topic text */
+  }
+  
+  /* Petition details styling */
+  .petition-details {
+    font-size: 16px; /* Size of the details text */
+    color: #8b4513; /* Color of the details text */
+  }
+  
+  /* View more button styling */
+  .view-more-button {
+    background-color: #8b451366;
+    border: 2px solid;
+    border-color: #8b4513;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 30px;
+    width: 100px;
+    font-size: 16px;
+    color: white; /* Text color of the button */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    float: right; /* Align to the right */
+    margin-top: 10px; /* Space above the button */
+  }
+  

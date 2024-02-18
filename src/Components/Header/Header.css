@@ -1,0 +1,54 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Adjust z-index as needed */
+}
+
+.header .overlap-group {
+  height: 45px;
+  position: relative;
+  background-color: #71d0ca;
+  padding: 5px;
+}
+
+.header .div {
+  display: flex; /* Use flexbox to align menu items */
+  background-color: #71d0ca;
+  height: 40px;
+  width: 100%;
+  margin: 3px;
+}
+
+.header .menu-item {
+  color: #8b4513;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  white-space: nowrap;
+  padding: 10px;
+  cursor: pointer;
+  margin: 0px 30px;
+  transition: background-color 0.3s; /* Add transition effect */
+}
+
+.header .menu-item.selected {
+  background-color: #d9d9d966;
+    border: 2px solid;
+    border-color: #8b4513;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.header .ellipse {
+  position: fixed;
+  top: 1px;
+  right: 20px;
+  height: 45px;
+  margin-left: auto; /* Move the ellipse to the right */
+  padding: 5px; /* Add padding to the ellipse for better alignment */
+}
