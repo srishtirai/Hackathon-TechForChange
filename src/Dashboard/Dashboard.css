@@ -188,3 +188,24 @@
     width: 100% !important;
   }
   
+
+  .progress {
+    width: 30%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .progress .progress-display {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .progress .progress-display span {
+    margin-right: 10px;
+    font-weight: bold;
+    
+  }
