@@ -15,3 +15,17 @@ export const signUpUser = requestData => axios(
   }
 );
 export const getUserDetails = () => axios.get("/userinfo")
+
+
+export const getTags = (type) => axios.get(`/tags?type=${type}`);
+export const getEvents = (tag_id) => {
+  let params = {type: "EVENT"}
+  if (tag_id) {
+    params["tag_id"] = tag_id;
+  }
+  return axios.get(`/events`, {params})
+}
+
+export const updateEventStatus = (eventId) => {
+  return axios.patch(`/events/${eventId}`);
+}
