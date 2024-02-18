@@ -21,7 +21,15 @@ export const getTags = (type) => axios.get(`/tags?type=${type}`);
 export const getEvents = (tag_id) => {
   let params = {type: "EVENT"}
   if (tag_id) {
-    params["tag_id"] = tag_id;
+    params["tag"] = tag_id;
+  }
+  return axios.get(`/events`, {params})
+}
+
+export const getPetitions = (tag_id) => {
+  let params = {type: "PETITION"}
+  if (tag_id) {
+    params["tag"] = tag_id;
   }
   return axios.get(`/events`, {params})
 }
