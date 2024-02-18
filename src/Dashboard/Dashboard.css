@@ -41,8 +41,10 @@
   }
   
   .dashboard .DALLE {
-    height: 234.12px;
-    width: 250px;
+    height: 130px;
+    width: 130px;
+    object-fit: contain;
+    border-radius: 50%;
   }
   
   .dashboard .text-wrapper-6 {
