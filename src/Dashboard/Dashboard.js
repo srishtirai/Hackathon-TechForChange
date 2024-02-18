@@ -207,11 +207,7 @@ export const Dashboard = () => {
         <div className="body">
           <div className="content">
             <div className="overlap-group-2">
-              <img
-                className="DALLE"
-                alt="Dalle"
-                src={userDetails.profile_url ? userDetails.profile_url : "https://c.animaapp.com/ZxZGK3Jl/img/dall-e-2024-02-17-17-55-21---redesign-the-set-of-circular-icons-@2x.png"}
-              />
+              <Image src={userDetails.profile_url ? userDetails.profile_url : "https://c.animaapp.com/ZxZGK3Jl/img/dall-e-2024-02-17-17-55-21---redesign-the-set-of-circular-icons-@2x.png"}  circular size="tiny"/>
             </div>
             <div className="text-wrapper-6">{userDetails.name}</div>
             <div className="text-wrapper-12">{getXPLevel(1200).levelName} | {getXPLevel(1200).remaining}/1000 XP</div>

@@ -1,9 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "../Components/Header";
+import {  getPetitions, getTags, updateEventStatus } from "../api";
+import { Icon, Transition, Label} from 'semantic-ui-react';
 import "./Petition.css";
+import {toast} from 'react-toastify';
+import { formatDate } from "../constants";
 
 export const Petition = () => {
+  const [tags, setTags] = useState([]);
+  const [petitions, setPetitions] = useState([]);
+  const [visible, setVisible] = useState(true);
+  const [selectedTopic, setSelectedTopic] = useState({});
+  const fetchPetitions = (tag_id) => {
+    getPetitions(tag_id).then(response => {
+      setPetitions(response.data);
+    }).catch(errror => {
+      console.log(errror);
+      toast("Failed to fetch petitions !");
+    })
+  };
 
+  useEffect(() => {
+    getTags("PETITION").then(response => {
+      const {data} = response;
+      setTags(data);
+    }).catch(errror => {
+      console.log(errror);
+      toast("Could not fetch tags", "error");
+    });
+    fetchPetitions();
+  }, []);
+
+  
+
+  
+
+/*
   const petitionData = [
     {
       id: 1,
@@ -49,37 +81,63 @@ export const Petition = () => {
     "Energy",
     "Conservation",
     "Community"
-  ];
+  ];*/
 
+  const selectTopic = (topic) => {
+    setSelectedTopic(topic)
+    fetchPetitions(topic.id);
+  }
+
+  const handleClick = (petition) => {
+    updateEventStatus(petition.id).then(response => {
+      setVisible(!visible);
+      setVisible(true);
+      fetchPetitions(selectedTopic.id);
+    }).catch(error => {
+      console.log(error);
+      toast.error("Failed to vote for petition. Please try again !");
+    });
+    
+  }
   
-  const [selectedTopic, setSelectedTopic] = useState(topics[0]);
-
   return (
     <div className="petition-page">
+      <Header />
       <div className="sidebar">
-        {topics.map((topic, index) => (
+        {tags.map((topic, index) => (
           <button 
             key={index} 
-            onClick={() => setSelectedTopic(topic)}
-            className={`sidebar-topic ${selectedTopic === topic ? 'selected' : ''}`} // Template literals
+            onClick={() => selectTopic(topic)}
+            className={`sidebar-topic ${selectedTopic.id === topic.id ? 'selected' : ''}`} // Template literals
           >
-            {topic}
+            {topic.name}
           </button>
         ))}
       </div>
       <div className="petition-container">
-        {petitionData
-          .filter(petition => petition.topic === selectedTopic)
-          .map(petition => (
+        {petitions
+          .map(petition => {
+            const voted = petition.status == "VOTED";
+            return (
             <div key={petition.id} className="petition-card">
-              <div className="petition-header">{petition.header}</div>
-              <div className={`petition-status ${petition.status.toLowerCase()}`}>{petition.status}</div>
-              <div className="petition-date">{petition.date}</div>
-              <div className="petition-location">{petition.location}</div>
-              <div className="petition-details">{petition.details}</div>
-              <button className="view-button">View More</button>
+              <img className="petition-img" src={petition.images[0]} alt="Petition Image" />
+              <div className="petition-header">{petition.name}</div>
+              {petition.status && <Label style={{margin: "4px"}} color="brown">{petition.status}</Label>}
+              <div className="petition-date">{formatDate(petition.created_at)}</div>
+              <div className="petition-location">Boston, MA</div>
+              <div className="petition-details">{petition.description}</div>
+              <button className={voted ? "view-button--red": "view-button"} onClick={() => {handleClick(petition)}}>
+                <Transition
+                  animation={"jiggle"}
+                  duration={500}
+                  visible={visible}
+                >
+                  <Icon name="like" />
+                </Transition>
+              </button>
             </div>
-        ))}
+        )
+            })}
       </div>
     </div>
   );

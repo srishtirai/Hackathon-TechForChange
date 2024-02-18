@@ -1,3 +1,4 @@
+import moment from 'moment';
 const level1 = [0, 1000];
 const level2 = [1000, 2000];
 const level3 = [2000, 3000];
@@ -22,4 +23,7 @@ export const getXPLevel = (currentPoints) => {
     }
   }
   return {};
-};
+}
+
+
+export const formatDate = (date) => moment(date).format("MM/DD/YYYY");

@@ -45,7 +45,7 @@
     background-color: #fffded;
     position: relative;
     left: 0;
-    height: 100%;
+    height: fit-content;
     position: absolute;
     top: 40px;
     display: flex;
@@ -115,12 +115,34 @@
     border: none;
     border-radius: 30px;
     box-shadow: 0px 4px 4px #00000040;
-    height: 30px;
-    width: 100px;
+    border-radius: 12px;
+    padding: 4px 0px 0px 4px;
     color: white; /* Text color of the button */
     font-size: 16px;
     cursor: pointer; /* Pointer cursor on hover */
     float: right; /* Align to the right */
     margin-top: 10px; /* Space above the button */
   }
+
+  .view-button--red {
+    background-color: #f88b3d1a;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px #00000040;
+    border-radius: 12px;
+    padding: 4px 0px 0px 4px;
+    color: #ba0000; /* Text color of the button */
+    font-size: 16px;
+    cursor: pointer; /* Pointer cursor on hover */
+    float: right; /* Align to the right */
+    margin-top: 10px; /* Space above the button */
+
+  }
   
+  .petition-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px #d6d6d6;
+    object-fit: cover;
+  }
