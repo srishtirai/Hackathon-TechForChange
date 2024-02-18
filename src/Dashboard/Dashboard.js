@@ -190,13 +190,13 @@ export const Dashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-      // getUserDetails().then(({data}) => {
-      //   setUserDetails(data);
-      // }).catch(error => {
-      //   console.log(error);
-      //   toast((error.data && error.data.message) || "Could not fetch user data");
-      //   navigate("/");
-      // });
+      getUserDetails().then(({data}) => {
+        setUserDetails(data);
+      }).catch(error => {
+        console.log(error);
+        toast((error.data && error.data.message) || "Could not fetch user data");
+        navigate("/");
+      });
   }, []);
 
   const [selectedOption, setSelectedOption] = useState("Achievements");
@@ -207,10 +207,10 @@ export const Dashboard = () => {
         <div className="body">
           <div className="content">
             <div className="overlap-group-2">
-              <Image src={userDetails.profile_url ? userDetails.profile_url : "https://c.animaapp.com/ZxZGK3Jl/img/dall-e-2024-02-17-17-55-21---redesign-the-set-of-circular-icons-@2x.png"}  circular size="tiny"/>
+              <Image src={"https://c.animaapp.com/ZxZGK3Jl/img/dall-e-2024-02-17-17-55-21---redesign-the-set-of-circular-icons-@2x.png"}  circular size="medium"/>
             </div>
-            <div className="text-wrapper-6">{userDetails.name}</div>
-            <div className="text-wrapper-12">{getXPLevel(1200).levelName} | {getXPLevel(1200).remaining}/1000 XP</div>
+            <div className="text-wrapper-6">{userDetails.name}</div><br></br>
+            <div className="text-wrapper-12">{getXPLevel(userDetails.credits).levelName} | {1000 - getXPLevel(userDetails.credits).remaining}/1000 XP</div>
             {/* <Progress percent={60} active>
               Active
             </Progress> */}

@@ -12,6 +12,7 @@ import { formatDate } from "../constants";
 export const Events = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedTopic, setSelectedTopic] = useState({});
   const [tags, setTags] = useState([]);
   const [events, setEvents] = useState([]);
 
@@ -20,8 +21,8 @@ export const Events = () => {
     setIsDialogOpen(true);
   };
 
-  const fetchEvents = () => {
-    getEvents().then(response => {
+  const fetchEvents = (topic_id) => {
+    getEvents(topic_id).then(response => {
       setEvents(response.data);
     }).catch(errror => {
       console.log(errror);
@@ -89,9 +90,24 @@ export const Events = () => {
   }
 ];*/
 
+const selectTopic = (topic) => {
+  setSelectedTopic(topic)
+  fetchEvents(topic.id);
+}
+
   return (
     <div className="events">
-      <Header className="header-instance" overlapGroupClassName="design-component-instance-node" />
+      <div className="sidebar">
+        {tags.map((topic, index) => (
+          <button 
+            key={index} 
+            onClick={() => selectTopic(topic)}
+            className={`sidebar-topic ${selectedTopic.id === topic.id ? 'selected' : ''}`} // Template literals
+          >
+            {topic.name}
+          </button>
+        ))}
+      </div>
       <div className="events-container">
         {events.map(event => (
           <div key={event.id} className="event-card">

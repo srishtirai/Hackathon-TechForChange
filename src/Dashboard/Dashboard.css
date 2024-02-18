@@ -286,6 +286,11 @@
   margin-bottom: 10px; /* Adjust margin as needed */
 }
 
+.ui.medium.image, .ui.medium.images .image, .ui.medium.images img, .ui.medium.images svg {
+  width: 200px;
+  margin-top: 20px;
+}
+
 .level-image {
   width: 50px; /* Adjust image width as needed */
   height: 50px; /* Adjust image height as needed */

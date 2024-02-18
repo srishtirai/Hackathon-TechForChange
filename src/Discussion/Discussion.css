@@ -9,7 +9,7 @@
   
   /* Sidebar styling */
   .sidebar {
-    width: 200px; /* Width of the sidebar */
+    width: 220px; /* Width of the sidebar */
     position: fixed; /* Fixed position to stay in place during scrolling */
     background-color: #fffded; /* Background color of the sidebar */
     padding: 20px; /* Padding inside the sidebar */

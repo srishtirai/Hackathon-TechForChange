@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import logo from '../../Components/My Logo.svg'
 import "./Header.css";
 
 export const Header = ({ className, overlapGroupClassName }) => {
@@ -26,6 +26,7 @@ export const Header = ({ className, overlapGroupClassName }) => {
       <div className={`overlap-group ${overlapGroupClassName}`}>
         <div className="rectangle" />
         <div className="div">
+          <img className="logo" src={logo}></img>
           <div className={`menu-item ${selectedMenuItem === "dashboard" ? 'selected' : ''}`} onClick={() => handleNavigation("dashboard")}>Dashboard</div>
           <div className={`menu-item ${selectedMenuItem === "events" ? 'selected' : ''}`} onClick={() => handleNavigation("events")}>Events</div>
           <div className={`menu-item ${selectedMenuItem === "discussion" ? 'selected' : ''}`} onClick={() => handleNavigation("discussion")}>Discussion</div>

@@ -8,7 +8,7 @@
   
   /* Sidebar styling */
   .sidebar {
-    width: 200px; /* Width of the sidebar */
+    width: 220px; /* Width of the sidebar */
     position: fixed; /* Fixed position to stay in place during scrolling */
     background-color: #fffded; /* Background color of the sidebar */
     padding: 20px; /* Padding inside the sidebar */
@@ -70,6 +70,7 @@
   
   /* Header of the petition card */
   .petition-header {
+    margin-top: 12px;
     font-size: 20px; /* Size of the header text */
     color: #8b4513; /* Color of the header text */
   }

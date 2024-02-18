@@ -102,7 +102,6 @@ export const Petition = () => {
   
   return (
     <div className="petition-page">
-      <Header />
       <div className="sidebar">
         {tags.map((topic, index) => (
           <button 
