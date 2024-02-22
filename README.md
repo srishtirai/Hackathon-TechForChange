@@ -1,4 +1,4 @@
-# InHabit UI
+# InHabit
 
 User interface to inhabitable app which promotes engagement in activities towards sustainability.
 
